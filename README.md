@@ -1,2 +1,3 @@
 # WordLOL
-This is My word guessing game for a project 1 of my Software Engineering Bootcamp with General Assembly.
+## By : Mohamed Hasan
+### date: 2/5/2026
