@@ -1,7 +1,58 @@
-*There will be input bar that you put the guesses in.
+1- There will be input bar that you put the guesses of what you are currently looking at ( random picture depending on topic which I'm making is a game reference).
 
-*Keyboard layout that will show the "letters used that are not included in the word".
+2- Keyboard layout that will show the "letters used that are not included in the word".
 
-*A picture hint that zooms out each time you use 2 guesses and would fully zoom out at 4th guess and is a total of 6 guesses.
+3- A picture hint that zooms out each time you use 2 guesses and would fully zoom out at 4th guess and is a total of 6 guesses.
 
-*History bar showcasing the already typed words "Creating an element in JavaScript that'll be fun".
+4- History bar showcasing the already typed words "Creating an element in JavaScript that'll be fun".
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1.Game setup
+Choose random target word
+Set max guesses to 6
+Set current guess to 0
+Set game state active
+Initialize empty history
+Initialize used letters
+Initialize picture zoom level
+
+2.Input bar
+User types a word
+On submit check word length
+If invalid reject input
+If valid process guess
+
+3.Guess checking
+Compare guess to target word
+Mark letters as correct present or absent
+Store result
+
+4.Keyboard tracking
+Update keyboard after each guess
+Disable absent letters
+Highlight present letters
+Highlight correct letters
+
+5.Picture hint system
+Start fully zoomed in
+Zoom out every 2 guesses
+Fully visible at 4th guess
+
+6.History bar
+Add guess to history
+Display letter results
+Keep all previous guesses
+
+7.Win condition
+Guess matches target word
+Show win message
+Disable input
+
+8.Lose condition
+Max guesses reached
+Reveal target word
+Show lose message
+
+9.Extra ( more to come )
+Prevent duplicate guesses
+
