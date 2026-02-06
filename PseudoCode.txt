@@ -1,0 +1,4 @@
+There will be input bar that you put the guesses in.
+Keyboard layout that will show the "letters used that are not included in the word".
+A picture hint that zooms out each time you use 2 guesses and would fully zoom out at 4th guess and is a total of 6 guesses.
+History bar showcasing the already typed words "Creating an element in JavaScript that'll be fun".
