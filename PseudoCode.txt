@@ -7,52 +7,52 @@
 4- History bar showcasing the already typed words "Creating an element in JavaScript that'll be fun".
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
+
 1.Game setup
-Choose random target word
-Set max guesses to 6
-Set current guess to 0
-Set game state active
-Initialize empty history
-Initialize used letters
-Initialize picture zoom level
+Choose random target word.
+Set max guesses to 6.
+Set current guess to 0.
+Set game state active.
+Initialize empty history.
+log used letters.
+picture zoom level when guess is used.
 
 2.Input bar
-User types a word
-On submit check word length
-If invalid reject input
-If valid process guess
+User types a word.
+If invalid reject input.
+If valid process guess.
 
 3.Guess checking
-Compare guess to target word
-Mark letters as correct present or absent
-Store result
+Compare guess to target word.
+Mark letters as correct present or absent.
+Store result.
 
 4.Keyboard tracking
-Update keyboard after each guess
-Disable absent letters
-Highlight present letters
-Highlight correct letters
+Update keyboard after each guess.
+Disable absent letters.
+Highlight present letters.
+Highlight correct letters.
 
 5.Picture hint system
-Start fully zoomed in
-Zoom out every 2 guesses
-Fully visible at 4th guess
+Start fully zoomed in.
+Zoom out every 2 guesses.
+Fully visible at 4th guess.
 
 6.History bar
-Add guess to history
-Display letter results
-Keep all previous guesses
+Add guess to history.
+Display letter results.
+Keep all previous guesses.
 
 7.Win condition
-Guess matches target word
-Show win message
-Disable input
+Guess matches target word.
+Show win message.
+Disable input.
 
 8.Lose condition
-Max guesses reached
-Reveal target word
-Show lose message
+Max guesses reached.
+Reveal target word.
+Show lose message.
+Disable input.
 
 9.Extra ( more to come )
-Prevent duplicate guesses
-
+Prevent duplicate guesses.
