@@ -1,8 +1,16 @@
-#keyboard /* work in progress still not sure about this */ {
+body {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 5px;
-  max-width: 500px;
+  gap: 8px;
+  width: 520px;
+  margin: 16px auto;
+}
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  width: 520px;
+  margin: 16px auto;
 }
 
 .key /* work in progress would probably change it maybe? */ {
