@@ -1,6 +1,7 @@
 const keyboard = document.getElementById("keyboard")
 
-const letters = "abcdefghijklmnopqrstuvwxyz"
+// const letters = "abcdefghijklmnopqrstuvwxyz"
+const letters = "qwertyuiopasdfghjklzxcvbnm"
 
 letters.split("").forEach((letter) => {
   const key = document.createElement("button")

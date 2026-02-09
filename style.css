@@ -1,0 +1,32 @@
+#keyboard /* work in progress still not sure about this */ {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  max-width: 520px;
+  margin: 16px auto;
+  align-items: center;
+}
+
+.key /* work in progress would probably change it maybe? */ {
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key.absent /* work in progress */ {
+  opacity: 0.45; /* was gonna grey it out think this is good? */
+}
+
+.key.present /* work in progress */ {
+  border-color: #b08a00;
+}
+
+.key.correct /* work in progress */ {
+  border-color: #0a7a2f;
+}
