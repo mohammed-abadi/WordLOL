@@ -1,10 +1,8 @@
 #keyboard /* work in progress still not sure about this */ {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 8px;
-  max-width: 520px;
-  margin: 16px auto;
-  align-items: center;
+  gap: 5px;
+  max-width: 500px;
 }
 
 .key /* work in progress would probably change it maybe? */ {
@@ -13,10 +11,7 @@
   padding: 10px 0;
   font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
   background: transparent;
-  cursor: pointer;
-  user-select: none;
 }
 
 .key.absent /* work in progress */ {
