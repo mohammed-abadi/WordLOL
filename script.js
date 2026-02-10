@@ -10,7 +10,7 @@ const maxGuesses = 6
 const count = document.getElementById("guess-count")
 
 const randomWord = words[Math.floor(Math.random() * words.length)]
-const winningWord = randomWord
+//const winningWord = randomWord
 
 console.log(randomWord)
 
@@ -30,24 +30,19 @@ function updateGuessDisplay() {
     currentGuess++
     count.textContent = currentGuess + " / " + maxGuesses
   } else if (currentGuess <= maxGuesses) {
-    alert("Game Over")
-    localStorage.setItem("correctWord", randomWord)
-    window.location.href = "lose.html"
+    alert("Game Over Word was: " + randomWord)
+    window.location.href = "/lose.html"
   }
 }
-// stores the correct word in local storage so that it can be accessed on the win and lose pages
-const word = localStorage.getItem("correctWord")
-const correctAnswerEl = document.getElementById("correct-answer")
-if (correctAnswerEl) correctAnswerEl.textContent = word
 
 submit.addEventListener("click", () => {
   const guess = input.value.toLowerCase()
   if (guess === randomWord) {
-    alert("Congratulations! You've guessed the word!")
-    localStorage.setItem("correctWord", randomWord)
-    window.location.href = "win.html"
+    alert("Congratulations! You've guessed the word: " + randomWord)
+    window.location.href = "/win.html"
   } else {
     alert("Sorry, that's not the correct word. Try again!")
+    updateGuessDisplay()
   }
   console.log(guess)
   input.value = ""

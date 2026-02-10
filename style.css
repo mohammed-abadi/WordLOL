@@ -33,3 +33,52 @@ body {
 .correct /* work in progress */ {
   border-color: #0a7a2f;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* WIN SCREEN */
+
+/* LOSE SCREEN */
+body {
+  background: linear-gradient(135deg, #e9a804, #18a5b1);
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}

@@ -2,12 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Winner!</title>
-    <script src="./script.js" defer></script>
+    <title>You Win</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
-  <body>
-    <h1>Congratulations! You've guessed the word!</h1>
-    <p>The correct answer was: <span id="correct-answer"></span></p>
+  <body class="win">
+    <div class="container">
+      <h1>You Win!</h1>
+      <p>Great job! You guessed correctly.</p>
+
+      <button onclick="playAgain()">Play Again</button>
+    </div>
+
+    <script>
+      function playAgain() {
+        window.location.href = "index.html"
+      }
+    </script>
   </body>
 </html>
