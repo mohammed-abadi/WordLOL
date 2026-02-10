@@ -11,6 +11,7 @@ const count = document.getElementById("guess-count")
 
 const randomWord = words[Math.floor(Math.random() * words.length)]
 const winningWord = randomWord
+
 console.log(randomWord)
 
 letters.split("").forEach((letter) => {
