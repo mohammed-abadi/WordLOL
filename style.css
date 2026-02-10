@@ -66,7 +66,45 @@ body {
 }
 
 #history-container {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.history-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.history-tile {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  background: #d3d6da;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.history-tile.absent {
+  background: #787c7e;
+  color: #fff;
+}
+
+.history-tile.present {
+  background: #c9b458;
+  color: #fff;
+}
+
+.history-tile.correct {
+  background: #6aaa64;
+  color: #fff;
 }
 
 .keyboard-section {
@@ -80,18 +118,20 @@ body {
   margin: 0;
 }
 
-/* Wordle-style keyboard */
 #keyboard {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, minmax(0, 1fr));
   gap: 6px;
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 #keyboard .key {
   height: 58px;
+  width: 100%;
+  padding: 0;
   border: none;
   border-radius: 6px;
   background: #d3d6da;
@@ -102,7 +142,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: default;
   user-select: none;
 }
 
@@ -127,7 +166,6 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
   transition: 0.3s;
 }
 

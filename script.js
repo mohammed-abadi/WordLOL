@@ -9,6 +9,7 @@ let currentGuess = 1
 const maxGuesses = 6
 const count = document.getElementById("guess-count")
 const img = document.getElementById("hint-image")
+const historyContainer = document.getElementById("history-container")
 
 let randomWord = ""
 
@@ -43,8 +44,9 @@ key.style.pointerEvents = "none"
 
 function checkGuess(guess) {
   const result = []
+  const minLen = Math.min(guess.length, randomWord.length)
 
-  for (let i = 0; i < guess.length; i++) {
+  for (let i = 0; i < minLen; i++) {
     if (guess[i] === randomWord[i]) {
       result.push("correct")
     } else if (randomWord.includes(guess[i])) {
@@ -52,6 +54,10 @@ function checkGuess(guess) {
     } else {
       result.push("absent")
     }
+  }
+
+  for (let i = minLen; i < guess.length; i++) {
+    result.push("absent")
   }
 
   return result
@@ -72,6 +78,21 @@ function updateKeyboard(guess, result) {
   })
 }
 
+function addHistory(guess, result) {
+  const row = document.createElement("div")
+  row.classList.add("history-row")
+
+  for (let i = 0; i < guess.length; i++) {
+    const tile = document.createElement("div")
+    tile.classList.add("history-tile")
+    tile.classList.add(result[i])
+    tile.textContent = guess[i].toUpperCase()
+    row.appendChild(tile)
+  }
+
+  historyContainer.appendChild(row)
+}
+
 function updateGuessDisplay() {
   if (currentGuess < maxGuesses) {
     currentGuess++
@@ -82,16 +103,20 @@ function updateGuessDisplay() {
   }
 }
 
+input.addEventListener("input", () => {
+  input.value = input.value.toLowerCase().replace(/[^a-z]/g, "")
+})
+
 submit.addEventListener("click", () => {
   const guess = input.value.toLowerCase()
 
-  if (guess.length !== randomWord.length) {
-    alert("Wrong length! It must be " + randomWord.length + " letters.")
+  if (guess.length === 0) {
     input.value = ""
     return
   }
 
   const result = checkGuess(guess)
+  addHistory(guess, result)
   updateKeyboard(guess, result)
 
   if (guess === randomWord) {
