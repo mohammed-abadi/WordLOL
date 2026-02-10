@@ -2,17 +2,33 @@ const keyboard = document.getElementById("keyboard")
 
 // const letters = "abcdefghijklmnopqrstuvwxyz"
 const letters = "qwertyuiopasdfghjklzxcvbnm"
-const words = ["javascript", "hangman", "programming", "developer", "algorithm"]
+/* const words = ["javascript", "hangman", "programming", "developer", "algorithm"] */
 const input = document.getElementById("guess-input")
 const submit = document.getElementById("sBtn")
 let currentGuess = 1
 const maxGuesses = 6
 const count = document.getElementById("guess-count")
+const img = document.getElementById("hint-image")
 
-const randomWord = words[Math.floor(Math.random() * words.length)]
-//const winningWord = randomWord
+let randomWord = ""
 
-console.log(randomWord)
+async function setupGame() {
+  let listRes = await axios.get("https://dog.ceo/api/breeds/list/all")
+
+  let breeds = Object.keys(listRes.data.message)
+
+  randomWord = breeds[Math.floor(Math.random() * breeds.length)]
+
+  console.log(randomWord)
+
+  let imgRen = await axios.get(
+    `https://dog.ceo/api/breed/${randomWord}/images/random`
+  )
+
+  img.src = imgRen.data.message
+}
+
+setupGame()
 
 letters.split("").forEach((letter) => {
   const key = document.createElement("button")
@@ -31,7 +47,7 @@ function updateGuessDisplay() {
     count.textContent = currentGuess + " / " + maxGuesses
   } else if (currentGuess <= maxGuesses) {
     alert("Game Over Word was: " + randomWord)
-    window.location.href = "/lose.html"
+    window.location.href = "./lose.html"
   }
 }
 
@@ -39,7 +55,7 @@ submit.addEventListener("click", () => {
   const guess = input.value.toLowerCase()
   if (guess === randomWord) {
     alert("Congratulations! You've guessed the word: " + randomWord)
-    window.location.href = "/win.html"
+    window.location.href = "./win.html"
   } else {
     alert("Sorry, that's not the correct word. Try again!")
     updateGuessDisplay()
@@ -47,6 +63,3 @@ submit.addEventListener("click", () => {
   console.log(guess)
   input.value = ""
 })
-
-// make an array of words and then randomly select one for the user to guess
-// for testing purposes
