@@ -80,8 +80,9 @@ function updateGuessDisplay() {
 input.addEventListener("input", () => {
   input.value = input.value.toLowerCase().replace(/[^a-z]/g, "")
 })
+const form = document.getElementById("guess-form")
 
-submit.addEventListener("click", () => {
+function handleGuess() {
   const guess = input.value.toLowerCase()
 
   if (guess.length === 0) {
@@ -100,4 +101,11 @@ submit.addEventListener("click", () => {
 
   console.log(guess)
   input.value = ""
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+  handleGuess()
 })
+
+submit.addEventListener("click", handleGuess)
