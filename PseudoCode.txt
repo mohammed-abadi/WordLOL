@@ -15,7 +15,8 @@ Set current guess to 0.
 Set game state active.
 Initialize empty history.
 log used letters.
-picture zoom level when guess is used.
+--picture zoom level when guess is used.-- scratched " the game is already difficult"
+
 
 2.Input bar
 User types a word.
@@ -27,16 +28,17 @@ Compare guess to target word.
 Mark letters as correct present or absent.
 Store result.
 
-4.Keyboard tracking
-Update keyboard after each guess.
+4.tracking
+History after each guess.
 Disable absent letters.
 Highlight present letters.
 Highlight correct letters.
 
 5.Picture hint system
-Start fully zoomed in.
-Zoom out every 2 guesses.
-Fully visible at 4th guess.
+--Start fully zoomed in.--
+--Zoom out every 2 guesses.--
+--Fully visible at 4th guess.--
+all previous hints were removed and added word length instead plus the already made present words , correct and absent.
 
 6.History bar
 Add guess to history.
@@ -46,13 +48,13 @@ Keep all previous guesses.
 7.Win condition
 Guess matches target word.
 Show win message.
-Disable input.
+--Disable input.-- switching site already automatically is.
 
 8.Lose condition
 Max guesses reached.
 Reveal target word.
 Show lose message.
-Disable input.
+--Disable input.-- switching site already automatically is.
 
 9.Extra ( more to come )
-Prevent duplicate guesses.
+--Prevent duplicate guesses.-- scratched "time constraint"
