@@ -67,7 +67,7 @@ https://dog.ceo/dog-api/
 - https://www.w3schools.com/
 - https://developer.mozilla.org/
 - https://stackoverflow.com/
-- https://dribbble.com/shots/26385963-Futuristic-Samurai-Website-Design?utm_source=Clipboard_Shot&utm_campaign=Nixtio&utm_content=Futuristic%20Samurai%20Website%20Design&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=Nixtio&utm_content=Futuristic%20Samurai%20Website%20Design&utm_medium=Social_Share)
+- https://dribbble.com
   - *Color scheme only*
 ---
 
