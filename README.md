@@ -68,6 +68,7 @@ https://dog.ceo/dog-api/
 - https://developer.mozilla.org/
 - https://stackoverflow.com/
 - https://dribbble.com/shots/26385963-Futuristic-Samurai-Website-Design
+ - color scheme only!
 ---
 
 ## Live Demo
