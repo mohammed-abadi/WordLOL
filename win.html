@@ -3,20 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <title>You Win</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body class="win">
+    <audio id="winSound" src="./again-again.mp3"></audio>
+
     <div class="container">
       <h1>You Win!</h1>
       <p>Great job! You guessed correctly.</p>
 
-      <button onclick="playAgain()">Play Again</button>
+      <button id="playAgainBtn">Play Again</button>
     </div>
 
     <script>
-      function playAgain() {
-        window.location.href = "index.html"
-      }
+      const btn = document.getElementById("playAgainBtn")
+      const sound = document.getElementById("winSound")
+
+      btn.addEventListener("click", () => {
+        sound
+          .play()
+          .then(() => {
+            sound.onended = () => {
+              window.location.href = "./game.html"
+            }
+          })
+          .catch(() => {
+            window.location.href = "./game.html"
+          })
+      })
     </script>
   </body>
 </html>

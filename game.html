@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess breed Game</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="game-container">
+      <!-- Picture hint  -->
+      <section class="picture-section">
+        <img id="hint-image" src="" alt="Hint Image" />
+        <div id="guess-count">1 / 6</div>
+        <div id="word-length"></div>
+      </section>
+
+      <!-- Input -->
+      <section class="input-section">
+        <form id="guess-form">
+          <input id="guess-input" type="text" placeholder="Enter guess" />
+          <button id="sBtn" type="button">Submit</button>
+        </form>
+      </section>
+
+      <!-- Guess history -->
+      <section class="history-section">
+        <h2 id="hs">Guess History:</h2>
+        <div id="history-container"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -3,20 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <title>You Lose</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body class="lose">
+    <audio id="loseSound" src="./again-again.mp3"></audio>
+
     <div class="container">
       <h1>You Lose</h1>
       <p>Better luck next time.</p>
 
-      <button onclick="playAgain()">Try Again</button>
+      <button id="playAgainBtn">Try Again</button>
     </div>
 
     <script>
-      function playAgain() {
-        window.location.href = "index.html"
-      }
+      const btn = document.getElementById("playAgainBtn")
+      const sound = document.getElementById("loseSound")
+
+      btn.addEventListener("click", () => {
+        sound
+          .play()
+          .then(() => {
+            sound.onended = () => {
+              window.location.href = "./game.html"
+            }
+          })
+          .catch(() => {
+            window.location.href = "./game.html"
+          })
+      })
     </script>
   </body>
 </html>

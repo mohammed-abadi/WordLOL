@@ -101,3 +101,7 @@ submit.addEventListener("click", () => {
   console.log(guess)
   input.value = ""
 })
+
+document.getElementById("play-btn").addEventListener("click", () => {
+  window.location.href = "./game.html"
+})

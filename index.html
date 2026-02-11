@@ -2,35 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>StarterPage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guess breed Game</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
+    <script defer src="script.js"></script>
   </head>
+  <style>
+    #imgStart {
+      display: block;
+      margin: 0 auto;
+      width: 470px;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid #4b4b4b;
+      box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    h1,
+    p {
+      color: black;
+    }
+  </style>
 
   <body>
-    <main class="game-container">
-      <!-- Picture hint  -->
-      <section class="picture-section">
-        <img id="hint-image" src="" alt="Hint Image" />
-        <div id="guess-count">1 / 6</div>
-        <div id="word-length"></div>
-      </section>
+    <div class="game-container">
+      <h1>Guess The Breed</h1>
+      <img
+        id="imgStart"
+        src="https://images.dog.ceo/breeds/finnish-lapphund/img_3801.jpg"
+        alt="Image of a dog"
+      />
+      <p>Test your knowledge. Can you guess the dog breed from the image?</p>
 
-      <!-- Input -->
-      <section class="input-section">
-        <form id="guess-form">
-          <input id="guess-input" type="text" placeholder="Enter guess" />
-          <button id="sBtn" type="button">Submit</button>
-        </form>
-      </section>
-
-      <!-- Guess history -->
-      <section class="history-section">
-        <h2>Guess History:</h2>
-        <div id="history-container"></div>
-      </section>
-    </main>
+      <button onclick="playAgain()" id="play-btn">Play Game</button>
+    </div>
   </body>
+
+  <script>
+    function playAgain() {
+      window.location.href = "game.html"
+    }
+  </script>
 </html>

@@ -1,9 +1,9 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
-
-/* ===== Layout ===== */
 
 body {
   height: 100vh;
@@ -11,7 +11,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e9a804, #18a5b1);
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(#0a2ecf 0%, #031b3f 35%, #242323 35%, #242323 100%),
+    radial-gradient(
+      circle at 30% 10%,
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0) 55%
+    ),
+    radial-gradient(
+      circle at 70% 12%,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0) 60%
+    );
+  background-repeat: no-repeat;
+  background-size:
+    100% 100%,
+    100% 55%,
+    100% 55%;
 }
 
 .game-container {
@@ -21,13 +38,13 @@ body {
   flex-direction: column;
   gap: 22px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#747272, #747272, #747272);
   padding: 30px;
   border-radius: 20px;
-  backdrop-filter: blur(6px);
+  border: 1px solid #ddd;
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.25);
+  color: #333;
 }
-
-/* ===== Picture Section ===== */
 
 .picture-section {
   display: flex;
@@ -41,13 +58,14 @@ body {
   height: 320px;
   object-fit: cover;
   border-radius: 15px;
+  border: 3px solid #4b4b4b;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 #guess-count {
   font-weight: 700;
+  color: rgb(0, 0, 0);
 }
-
-/* ===== Input Section ===== */
 
 .input-section {
   display: flex;
@@ -63,11 +81,16 @@ body {
 #guess-input {
   padding: 10px 12px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #999;
   outline: none;
+  background: #fff;
+  font-size: 14px;
 }
 
-/* ===== History Section ===== */
+#guess-input:focus {
+  border-color: rgb(0, 68, 114);
+  box-shadow: 0 0 0 3px rgba(0, 102, 170, 0.18);
+}
 
 .history-section {
   min-height: 70px;
@@ -96,11 +119,9 @@ body {
   justify-content: center;
   font-weight: 800;
   background: #d3d6da;
-  color: #111;
+  color: #ffffff;
   text-transform: uppercase;
 }
-
-/* ===== Tile States ===== */
 
 .history-tile.absent {
   background: #787c7e;
@@ -117,37 +138,80 @@ body {
   color: #fff;
 }
 
-/* ===== Buttons ===== */
-
 button {
   padding: 12px 25px;
   font-size: 1rem;
-  border: none;
-  border-radius: 10px;
-  transition: 0.3s;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.12)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  color: #0a2ecf;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-radius 0.35s ease,
+    filter 0.25s ease;
 }
 
-/* ===== Win / Lose Pages ===== */
+button:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.52),
+    rgba(255, 255, 255, 0.18)
+  );
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  filter: brightness(1.04);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.99);
+  border-radius: 12px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.24),
+    inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
 body.win .container,
 body.lose .container {
   text-align: center;
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#ffffff, #eeeeee, #ffffff);
   padding: 40px;
   border-radius: 20px;
-  backdrop-filter: blur(6px);
+  border: 1px solid #ddd;
+  box-shadow: 0px 10px 28px rgba(0, 0, 0, 0.25);
   width: 520px;
   max-width: 90vw;
+  color: #333;
 }
 
 body.win h1,
 body.lose h1 {
   font-size: 3rem;
   margin-bottom: 15px;
+  color: rgb(0, 68, 114);
 }
 
 body.win p,
 body.lose p {
   font-size: 1.2rem;
   margin-bottom: 25px;
+  color: #333;
+}
+
+h2,
+#word-length {
+  color: rgb(0, 0, 0);
 }
