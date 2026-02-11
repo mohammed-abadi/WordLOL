@@ -14,8 +14,7 @@ Each guess gives feedback:
 - 🟨 Correct letter but wrong position
 - ⬜ Letter not in the word
 
-The image reveals more clearly as the guesses progress.
-
+The only hint you have is the wrong count.
 ---
 
 ## Screenshots
